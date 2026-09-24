@@ -1,0 +1,153 @@
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes hero-image-reveal {
+  from { opacity: 0.72; transform: scale(1.035); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes hero-copy-reveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-media { animation: hero-image-reveal 1200ms var(--motion-ease) both; }
+.hero-title,
+.hero-kicker,
+.hero-actions { animation: hero-copy-reveal 720ms var(--motion-ease) both; }
+.hero-kicker { animation-delay: 110ms; }
+.hero-actions { animation-delay: 200ms; }
+
+.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition: opacity 680ms var(--motion-ease), transform 680ms var(--motion-ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.motion-ready [data-reveal="from-left"] { transform: translate3d(-34px, 0, 0); }
+.motion-ready [data-reveal="from-right"] { transform: translate3d(34px, 0, 0); }
+.motion-ready [data-reveal="scale"] { transform: scale(0.975); }
+.motion-ready [data-reveal].is-revealed { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+
+.motion-ready .section-label[data-reveal]::after,
+.motion-ready .capabilities-label[data-reveal]::after,
+.motion-ready .impact-label[data-reveal]::after {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 560ms var(--motion-ease) 220ms;
+}
+
+.motion-ready .section-label[data-reveal].is-revealed::after,
+.motion-ready .capabilities-label[data-reveal].is-revealed::after,
+.motion-ready .impact-label[data-reveal].is-revealed::after { transform: scaleX(1); }
+
+.motion-ready .about-media,
+.motion-ready .values-media {
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path 900ms var(--motion-ease);
+}
+
+.motion-ready .values-media { clip-path: inset(0 100% 0 0); }
+.motion-ready .about-media.is-revealed,
+.motion-ready .values-media.is-revealed { clip-path: inset(0); }
+.motion-ready .about-media img,
+.motion-ready .values-media img { transform: scale(1.025); transition: transform 1100ms var(--motion-ease); }
+.motion-ready .about-media.is-revealed img,
+.motion-ready .values-media.is-revealed img { transform: scale(1); }
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card { transition: transform 280ms var(--motion-ease), box-shadow 280ms ease; }
+  .service-card:hover { transform: translateY(-5px); box-shadow: 0 18px 36px rgba(13, 13, 13, 0.16); }
+  .service-card .service-icon,
+  .impact-stat .impact-icon { transition: color 220ms ease, transform 300ms var(--motion-ease); }
+  .service-card:hover .service-icon { color: var(--yellow); transform: translateY(-3px); }
+  .impact-stat:hover .impact-icon { transform: translateY(-3px); }
+  .map-card a span:last-child,
+  .quote-arrow { display: inline-block; transition: transform 220ms var(--motion-ease); }
+  .map-card a:hover span:last-child,
+  .quote-button:hover .quote-arrow { transform: translateX(4px); }
+}
+
+.portfolio-card {
+  transition: opacity 220ms ease, transform 420ms var(--motion-ease), box-shadow 260ms ease;
+}
+
+.portfolio-card img { transition: opacity 180ms ease, transform 420ms var(--motion-ease); }
+.portfolio-card.is-cover-changing img { opacity: 0; transform: scale(1.015); }
+
+html.motion-ready .portfolio-card.is-filtering-out { opacity: 0; transform: scale(0.975); pointer-events: none; }
+.portfolio-card.is-filtering-in { animation: portfolio-card-in 460ms var(--motion-ease) both; }
+
+@keyframes portfolio-card-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.portfolio-viewer:not([hidden]) .portfolio-viewer-backdrop { animation: viewer-backdrop-in 240ms ease-out both; }
+.portfolio-viewer:not([hidden]) .portfolio-viewer-panel { animation: viewer-panel-in 420ms var(--motion-ease) both; }
+.portfolio-viewer-image { transition: opacity 180ms ease, transform 300ms var(--motion-ease); }
+.portfolio-viewer-image.is-changing { opacity: 0; transform: translateX(var(--image-direction, 10px)); }
+
+@keyframes viewer-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes viewer-panel-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.capabilities-control,
+.portfolio-viewer-nav,
+.portfolio-viewer-close,
+.portfolio-thumbnail,
+.portfolio-filter,
+.contact-submit,
+.whatsapp-confirm-actions button {
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease,
+    opacity 180ms ease, transform 220ms var(--motion-ease), box-shadow 220ms ease;
+}
+
+.capabilities-control:active,
+.portfolio-viewer-nav:active,
+.portfolio-viewer-close:active,
+.contact-submit:active,
+.whatsapp-confirm-actions button:active { transform: scale(0.96); }
+.contact-field { transition: transform 220ms var(--motion-ease-soft); }
+.contact-field:focus-within { transform: translateY(-2px); }
+.whatsapp-confirm:not([hidden]) .whatsapp-confirm-backdrop { animation: viewer-backdrop-in 200ms ease-out both; }
+.whatsapp-confirm:not([hidden]) .whatsapp-confirm-panel { animation: viewer-panel-in 360ms var(--motion-ease) both; }
+
+@media (max-width: 700px) {
+  .motion-ready [data-reveal],
+  .motion-ready [data-reveal="from-left"],
+  .motion-ready [data-reveal="from-right"] {
+    transform: translate3d(0, 16px, 0);
+    transition-duration: 520ms;
+    transition-delay: min(var(--reveal-delay, 0ms), 120ms);
+  }
+  .motion-ready [data-reveal].is-revealed { transform: translate3d(0, 0, 0); }
+  .motion-ready .about-media,
+  .motion-ready .values-media { clip-path: inset(0 0 10% 0); }
+  .motion-ready .about-media.is-revealed,
+  .motion-ready .values-media.is-revealed { clip-path: inset(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+  .motion-ready [data-reveal],
+  .about-media,
+  .values-media { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+
+  .portfolio-card.is-cover-changing img { opacity: 1; transform: none; }
+}

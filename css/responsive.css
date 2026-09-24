@@ -1,0 +1,772 @@
+@media (max-width: 980px) {
+  .header-inner {
+    width: min(calc(100% - 40px), var(--container));
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+  }
+
+  .nav-toggle {
+    display: block;
+    justify-self: end;
+  }
+
+  .primary-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    height: auto;
+    padding: 12px 20px 22px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--black-soft);
+    border-bottom: 1px solid var(--charcoal);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .primary-nav.is-open {
+    display: flex;
+  }
+
+  .nav-link {
+    min-height: 48px;
+    border-bottom: 1px solid var(--charcoal);
+  }
+
+  .nav-link::after {
+    right: auto;
+    bottom: -1px;
+    width: 40px;
+  }
+
+  .quote-button {
+    display: none;
+  }
+
+  .nav-toggle.is-open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.is-open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .hero-inner {
+    width: min(calc(100% - 40px), var(--container));
+  }
+
+  .hero-content {
+    width: min(100%, 900px);
+  }
+
+  .about-inner {
+    width: min(calc(100% - 40px), var(--container));
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .about-media {
+    min-height: 360px;
+    max-height: 420px;
+  }
+
+  .values-inner {
+    width: min(calc(100% - 40px), var(--container));
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .values-content {
+    order: 1;
+  }
+
+  .values-media {
+    order: 2;
+    min-height: 360px;
+    max-height: 420px;
+  }
+
+  .services-heading {
+    display: block;
+  }
+
+  .services-intro {
+    max-width: none;
+  }
+
+  .services-track {
+    margin-right: -20px;
+    padding-right: 20px;
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .services-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-card {
+    flex: 0 0 min(360px, 78vw);
+    scroll-snap-align: start;
+  }
+
+  .capabilities-inner {
+    width: min(calc(100% - 40px), var(--container));
+  }
+
+  .capability-card {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+
+  .impact-inner {
+    width: min(calc(100% - 40px), var(--container));
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-title {
+    white-space: normal;
+  }
+
+  .portfolio-inner {
+    width: min(calc(100% - 40px), var(--container));
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-title {
+    white-space: normal;
+  }
+
+  .contact-inner {
+    width: min(calc(100% - 40px), var(--container));
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .map-inner {
+    width: min(calc(100% - 40px), var(--container));
+  }
+
+  .footer-inner {
+    width: min(calc(100% - 40px), var(--container));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .header-inner {
+    width: calc(100% - 28px);
+    height: 68px;
+  }
+
+  .logo-mark {
+    font-size: 1.82rem;
+  }
+
+  .logo-name {
+    font-size: 1.02rem;
+  }
+
+  .logo-tagline {
+    font-size: 0.35rem;
+  }
+
+  .hero {
+    min-height: 100svh;
+    max-height: none;
+  }
+
+  .hero-media {
+    object-position: 61% center;
+  }
+
+  .hero-overlay {
+    background: rgba(7, 7, 7, 0.56);
+  }
+
+  .hero-inner {
+    width: calc(100% - 28px);
+    align-items: center;
+    padding: 52px 0 46px;
+  }
+
+  .hero-kicker {
+    max-width: 340px;
+    margin: 22px auto 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .hero-title {
+    max-width: 430px;
+    margin-inline: auto;
+    font-size: clamp(2.25rem, 10vw, 3.35rem);
+    line-height: 1.04;
+  }
+
+  .hero-actions {
+    margin-top: 22px;
+  }
+
+  .hero-button {
+    min-height: 46px;
+    padding: 0 18px;
+    font-size: 0.65rem;
+  }
+
+  .about-section {
+    padding: 48px 0;
+  }
+
+  .about-inner {
+    width: calc(100% - 28px);
+    gap: 28px;
+  }
+
+  .about-content {
+    padding: 0;
+  }
+
+  .section-label {
+    margin-bottom: 20px;
+  }
+
+  .about-title {
+    max-width: 420px;
+    font-size: clamp(1.48rem, 7vw, 1.85rem);
+    line-height: 1.08;
+  }
+
+  .about-copy {
+    margin-top: 18px;
+    font-size: 0.87rem;
+    line-height: 1.58;
+  }
+
+  .about-media {
+    min-height: 255px;
+    max-height: 310px;
+  }
+
+  .values-section {
+    padding: 4px 0 52px;
+  }
+
+  .values-inner {
+    width: calc(100% - 28px);
+    gap: 28px;
+  }
+
+  .values-media {
+    min-height: 255px;
+    max-height: 310px;
+  }
+
+  .values-content {
+    padding: 0;
+  }
+
+  .values-title {
+    max-width: none;
+    font-size: clamp(1.45rem, 7.1vw, 2.4rem);
+    line-height: 1.05;
+  }
+
+  .values-list {
+    gap: 18px;
+    margin-top: 26px;
+  }
+
+  .values-list p {
+    padding-left: 18px;
+    font-size: 0.9rem;
+    line-height: 1.62;
+  }
+
+  .services-section {
+    padding: 48px 0 56px;
+  }
+
+  .services-inner {
+    width: calc(100% - 28px);
+  }
+
+  .services-heading {
+    margin-bottom: 24px;
+  }
+
+  .services-title {
+    max-width: 100%;
+    font-size: clamp(2rem, 9.5vw, 2.35rem);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .services-intro {
+    margin-top: 16px;
+    font-size: 0.84rem;
+    line-height: 1.58;
+  }
+
+  .services-track {
+    margin-right: 0;
+    padding-right: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    overflow: visible;
+    scroll-snap-type: none;
+  }
+
+  .service-card {
+    min-height: 0;
+    aspect-ratio: 1;
+    scroll-snap-align: none;
+  }
+
+  .service-card-content {
+    height: 100%;
+    padding: 15px 13px;
+  }
+
+  .service-number {
+    padding-right: 40px;
+    font-size: 1.1rem;
+  }
+
+  .service-number::after {
+    width: 28px;
+  }
+
+  .service-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: auto;
+  }
+
+  .service-card h3 {
+    margin: 14px 0 auto;
+    font-size: 0.84rem;
+    line-height: 1.12;
+  }
+
+  .service-card-content > p:not(.service-number) {
+    display: none;
+  }
+
+  .service-next {
+    display: none;
+  }
+
+  .capabilities-section {
+    padding: 46px 0 52px;
+  }
+
+  .capabilities-inner {
+    width: calc(100% - 28px);
+  }
+
+  .capabilities-header {
+    margin-bottom: 22px;
+  }
+
+  .capabilities-title {
+    max-width: 270px;
+    font-size: clamp(1.8rem, 8.3vw, 2.2rem);
+    line-height: 1.04;
+  }
+
+  .capabilities-intro {
+    max-width: 330px;
+    font-size: 0.86rem;
+  }
+
+  .capabilities-count {
+    display: block;
+  }
+
+  .capabilities-control {
+    width: 38px;
+    height: 38px;
+  }
+
+  .capabilities-controls {
+    width: 100%;
+    margin: 20px 0 0;
+    padding-top: 0;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px;
+  }
+
+  .capabilities-track {
+    margin-right: -14px;
+    padding-right: 14px;
+  }
+
+  .capability-card {
+    flex-basis: min(290px, 72vw);
+    aspect-ratio: 4 / 4.8;
+  }
+
+  .capability-card-body {
+    padding: 18px;
+  }
+
+  .capability-card-body span {
+    font-size: 1.1rem;
+  }
+
+  .capability-eyebrow {
+    margin-top: 12px;
+    font-size: 0.59rem;
+  }
+
+  .capability-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .capability-copy > p {
+    margin-top: 12px;
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+
+  .capability-copy .capability-learn {
+    margin-top: 12px;
+    font-size: 0.58rem;
+  }
+
+  .impact-section {
+    padding: 32px 0;
+  }
+
+  .portfolio-section {
+    padding: 50px 0;
+  }
+
+  .portfolio-inner {
+    width: calc(100% - 28px);
+  }
+
+  .portfolio-title {
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
+    line-height: 1.02;
+  }
+
+  .portfolio-intro {
+    margin-top: 14px;
+    font-size: 0.84rem;
+  }
+
+  .portfolio-filters {
+    margin: 24px 0 18px;
+  }
+
+  .portfolio-filter {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 0.61rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .portfolio-card {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .portfolio-card-content {
+    padding: 18px;
+  }
+
+  .portfolio-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .portfolio-viewer {
+    padding: 0;
+  }
+
+  .portfolio-viewer-panel {
+    width: 100%;
+    height: 100dvh;
+    max-height: none;
+    grid-template-rows: auto minmax(0, 1fr) 68px 42px;
+  }
+
+  .portfolio-viewer-header {
+    width: calc(100% - 28px);
+    min-height: 90px;
+    padding: 14px 0 8px;
+  }
+
+  .portfolio-viewer-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .portfolio-viewer-meta {
+    display: none;
+  }
+
+  .portfolio-viewer-actions {
+    gap: 10px;
+  }
+
+  .portfolio-viewer-stage {
+    min-height: 0;
+    height: auto;
+  }
+
+  .portfolio-viewer-image {
+    width: calc(100% - 28px);
+  }
+
+  .portfolio-viewer-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .portfolio-viewer-prev { left: 8px; }
+  .portfolio-viewer-next { right: 8px; }
+
+  .portfolio-thumbnails,
+  .portfolio-viewer-footer {
+    width: calc(100% - 28px);
+  }
+
+  .portfolio-thumbnails {
+    height: 68px;
+  }
+
+  .portfolio-thumbnail {
+    flex-basis: 82px;
+    width: 82px;
+    height: 50px;
+  }
+
+  .impact-section::before {
+    width: 3px;
+  }
+
+  .impact-inner {
+    width: calc(100% - 28px);
+  }
+
+  .impact-heading {
+    margin-bottom: 22px;
+  }
+
+  .impact-label {
+    margin-bottom: 12px;
+  }
+
+  .impact-title {
+    font-size: clamp(1.65rem, 8.5vw, 2.15rem);
+    line-height: 1;
+  }
+
+  .impact-copy {
+    max-width: 36ch;
+    font-size: 0.76rem;
+    line-height: 1.5;
+  }
+
+  .impact-stat {
+    min-height: 190px;
+    padding: 16px 14px;
+  }
+
+  .impact-index {
+    top: 16px;
+    right: 16px;
+  }
+
+  .impact-number {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+  }
+
+  .impact-stat h3 {
+    margin-top: 10px;
+    font-size: 0.62rem;
+  }
+
+  .impact-icon {
+    width: 31px;
+    height: 31px;
+    margin-bottom: 10px;
+  }
+
+  .impact-description {
+    margin-top: 9px;
+    font-size: 0.61rem;
+    line-height: 1.4;
+  }
+
+  .contact-section {
+    padding: 50px 0 56px;
+  }
+
+  .contact-inner {
+    width: calc(100% - 28px);
+    gap: 32px;
+  }
+
+  .contact-title {
+    font-size: clamp(1.85rem, 9vw, 2.5rem);
+    line-height: 1;
+  }
+
+  .contact-intro {
+    margin-top: 16px;
+    font-size: 0.84rem;
+  }
+
+  .contact-details {
+    margin-top: 28px;
+  }
+
+  .contact-form {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  .contact-field-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-submit {
+    width: 100%;
+  }
+
+  .map-section {
+    padding: 40px 0 46px;
+  }
+
+  .map-inner {
+    width: calc(100% - 28px);
+  }
+
+  .map-heading {
+    margin-bottom: 20px;
+  }
+
+  .map-heading h2 {
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
+  }
+
+  .map-heading > p {
+    font-size: 0.82rem;
+  }
+
+  .map-frame {
+    height: auto;
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  .map-frame iframe {
+    height: 320px;
+  }
+
+  .map-card {
+    position: static;
+    width: 100%;
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .footer-inner {
+    width: calc(100% - 28px);
+    padding: 44px 0 38px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-brand p {
+    margin-top: 16px;
+  }
+
+  .footer-column h2 {
+    margin-bottom: 14px;
+  }
+
+  .footer-bottom {
+    padding: 16px 14px;
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .whatsapp-confirm-panel {
+    width: min(calc(100vw - 28px), 420px);
+    max-width: 100%;
+    min-width: 0;
+    padding: 26px 20px 20px;
+    overflow: hidden;
+  }
+
+  .whatsapp-confirm {
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    padding: 14px;
+  }
+
+  .whatsapp-confirm-panel h2 {
+    max-width: 100%;
+    font-size: clamp(1.3rem, 7vw, 1.65rem);
+    line-height: 1.08;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .whatsapp-confirm-panel > p:not(.whatsapp-confirm-label) {
+    max-width: 100%;
+    font-size: 0.82rem;
+    overflow-wrap: anywhere;
+  }
+
+  .whatsapp-confirm-actions {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-confirm-actions button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .whatsapp-float > i {
+    font-size: 2.4rem;
+  }
+
+  .whatsapp-number {
+    display: none;
+  }
+}
+
+
