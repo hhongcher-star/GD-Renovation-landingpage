@@ -5,3 +5,6 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Keep original high-resolution portfolio videos local; Git tracks compressed web copies.
+assets/videos/portfolio/
+

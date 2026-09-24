@@ -3,26 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GD Renovation</title>
-  <meta name="description" content="GD Renovation creates considered spaces for better living.">
+  <title>Beauty Interiors Pro Renovation</title>
+  <meta name="description" content="Beauty Interiors Pro Renovation creates considered spaces for better living.">
   <link rel="icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="css/style.css?v=20260924-14">
-  <link rel="stylesheet" href="css/responsive.css?v=20260924-11">
+  <link rel="stylesheet" href="css/style.css?v=20260924-30">
+  <link rel="stylesheet" href="css/responsive.css?v=20260924-24">
   <link rel="stylesheet" href="css/animations.css?v=20260924-2">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="nav-logo" href="#" aria-label="GD Renovation home">
-        <span class="logo-mark">GD</span>
-        <span class="logo-copy">
-          <span class="logo-name">Renovation</span>
-          <span class="logo-tagline">Space Design &amp; Build</span>
-        </span>
+      <a class="nav-logo" href="#" aria-label="Beauty Decor home">
+        <img class="logo-mark" src="assets/images/beauty-decor-header-logo.png" alt="Beauty Decor - We Beautify Your Home">
       </a>
 
       <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
@@ -34,7 +30,17 @@
       <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
         <a class="nav-link" href="#">Home</a>
         <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#services">Services</a>
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="services-menu">
+            Services <span class="nav-dropdown-chevron" aria-hidden="true">&#9662;</span>
+          </button>
+          <div class="nav-dropdown-menu" id="services-menu" hidden>
+            <a href="#portfolio" data-portfolio-category="residential">Residential</a>
+            <a href="#portfolio" data-portfolio-category="commercial">Commercial</a>
+            <a href="#portfolio" data-portfolio-category="rendering">3D Rendering</a>
+            <a href="#portfolio" data-portfolio-category="social">Social Media Video</a>
+          </div>
+        </div>
         <a class="nav-link" href="#portfolio">Portfolio</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
@@ -48,13 +54,16 @@
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <img class="hero-media" src="assets/images/hero-interior.png" alt="A completed modern living room and open-plan kitchen">
+      <img class="hero-media hero-image" src="assets/images/portfolio/novum-bangsar-south/03.jpg" alt="Completed living room renovation at Novum Bangsar South">
+      <video class="hero-media hero-video" autoplay muted loop playsinline preload="none" poster="assets/images/portfolio/novum-bangsar-south/03.jpg" aria-hidden="true">
+        <source src="assets/videos/hero-renovation.mov" type="video/quicktime">
+      </video>
       <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-inner">
         <div class="hero-content">
           <h1 class="hero-title" id="hero-title">
-            Welcome to <span>GD Renovation</span>
+            Welcome to <span>Beauty Interiors Pro Renovation</span>
           </h1>
           <p class="hero-kicker">Reliable home interior and commercial renovation solutions in Malaysia.</p>
           <div class="hero-actions">
@@ -69,11 +78,11 @@
         <div class="about-content">
           <p class="section-label">About Us</p>
           <h2 class="about-title" id="about-title">&quot;Some people look for a beautiful place, <span>we make a place beautiful!</span>&quot;</h2>
-          <p class="about-copy"><strong>GD Renovation</strong> is a interior design and decorator company which established in 2014, with a team of rich experience and industry knowledge for commercial and individual homes. We as a team will always prioritize customers needs and wants besides pursuing perfection and providing first-Class services to our valued customers.</p>
+          <p class="about-copy"><strong>Beauty Interiors Pro Renovation</strong> is an interior design and decorator company with a team of rich experience and industry knowledge for commercial and individual homes. We as a team will always prioritize customers needs and wants besides pursuing perfection and providing first-class services to our valued customers.</p>
         </div>
 
         <div class="about-media">
-          <img src="assets/images/section 1.jpg" alt="Completed GD Renovation dining and kitchen interior">
+          <img src="assets/images/section 1.jpg" alt="Completed Beauty Interiors Pro Renovation dining and kitchen interior">
         </div>
       </div>
     </section>
@@ -81,13 +90,13 @@
     <section class="values-section" aria-labelledby="values-title">
       <div class="values-inner">
         <div class="values-media">
-          <img src="assets/images/about-interior.png" alt="Elegant completed interior with warm lighting and staircase">
+          <img src="assets/images/portfolio/honey-land-bangsar/01.jpg" alt="Completed Honey Land commercial interior in Bangsar">
         </div>
 
         <div class="values-content">
           <p class="section-label">Our Foundation</p>
           <h2 class="values-title" id="values-title">Vision, Mission <span>&amp; Value</span></h2>
-          <div class="values-list" aria-label="GD Renovation vision mission and values">
+          <div class="values-list" aria-label="Beauty Interiors Pro Renovation vision mission and values">
             <p><strong>Vision:</strong> To be customer's first choice in interior designs.</p>
             <p><strong>Mission:</strong> To design and build the sweetest home for you, our valued customer.</p>
             <p><strong>Values:</strong> Professional business ethics, corporate governance and excellent customer service is the backbone of our company.</p>
@@ -103,57 +112,53 @@
             <p class="section-label">Our Services</p>
             <h2 class="services-title" id="services-title">What <span>we do</span></h2>
           </div>
-          <p class="services-intro">From design conceptualization to space planning, GD Renovation comprehensive project management services encompass even minute details like lighting and customized system furniture in every aspect. We provide complete design and project management package, convert idea into final production.</p>
+          <p class="services-intro">From design conceptualization to space planning, Beauty Interiors Pro Renovation comprehensive project management services encompass even minute details like lighting and customized system furniture in every aspect. We provide complete design and project management package, convert idea into final production.</p>
         </div>
 
-        <div class="services-track" tabindex="0" aria-label="GD Renovation services. Scroll horizontally to view all services.">
-          <article class="service-card service-card-design">
-            <div class="service-card-content">
-              <p class="service-number">01</p>
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img"><path d="M3 21h6L20.5 9.5a2.1 2.1 0 0 0-6-6L3 15v6Z"/><path d="m13.5 4.5 6 6"/><path d="M12 6 5 3l-2 2 3 7"/></svg>
-              </div>
-              <h3>Interior Design &amp; Planning</h3>
-              <p>Various interior designs are ready for customer who do not have idea on decoration.</p>
-              <button class="service-next" type="button" aria-label="Show Budget and Quotation service" title="Next service"><span class="service-next-icon" aria-hidden="true"></span></button>
+        <div class="service-groups">
+          <section class="service-group" aria-labelledby="residential-services-title">
+            <div class="service-group-heading">
+              <p class="service-group-number">01</p>
+              <h3 id="residential-services-title">Residential Renovation</h3>
+              <p>Thoughtful homes designed around daily living, comfort and lasting workmanship.</p>
             </div>
-          </article>
+            <div class="services-track" aria-label="Residential renovation services">
+              <article class="service-card">
+                <img src="assets/images/portfolio/armanee/01.jpg" alt="Completed bedroom renovation at Armanee" loading="lazy">
+                <div class="service-card-content"><p class="service-project-name">Armanee</p><h4>Condominium Renovation</h4></div>
+              </article>
+              <article class="service-card">
+                <img src="assets/images/portfolio/selayang-residence/01.jpg" alt="Completed custom wardrobe at Selayang Residence" loading="lazy">
+                <div class="service-card-content"><p class="service-project-name">Selayang Residence</p><h4>Landed House Renovation</h4></div>
+              </article>
+              <article class="service-card">
+                <img src="assets/images/portfolio/datum-jelatek/01.jpg" alt="Completed bedroom interior at Datum Jelatek" loading="lazy">
+                <div class="service-card-content"><p class="service-project-name">Datum Jelatek</p><h4>Custom Interior &amp; Carpentry</h4></div>
+              </article>
+            </div>
+          </section>
 
-          <article class="service-card service-card-budget">
-            <div class="service-card-content">
-              <p class="service-number">02</p>
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2V2Z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
-              </div>
-              <h3>Budget &amp; Quotation</h3>
-              <p>Reach us for discussion and understanding to get your renovation budget.</p>
-              <button class="service-next" type="button" aria-label="Show Project Management service" title="Next service"><span class="service-next-icon" aria-hidden="true"></span></button>
+          <section class="service-group" aria-labelledby="commercial-services-title">
+            <div class="service-group-heading">
+              <p class="service-group-number">02</p>
+              <h3 id="commercial-services-title">Commercial Renovation</h3>
+              <p>Purpose-built spaces that support customer experience, operations and brand identity.</p>
             </div>
-          </article>
-
-          <article class="service-card service-card-project">
-            <div class="service-card-content">
-              <p class="service-number">03</p>
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img"><path d="M9 5h6M9 3h6v4H9z"/><path d="M6 5H4v17h16V5h-2"/><path d="m8 14 2 2 5-5"/></svg>
-              </div>
-              <h3>Project Management</h3>
-              <p>Manage the entire renovation from start to end.</p>
-              <button class="service-next" type="button" aria-label="Show Smart Living service" title="Next service"><span class="service-next-icon" aria-hidden="true"></span></button>
+            <div class="services-track" aria-label="Commercial renovation services">
+              <article class="service-card">
+                <img src="assets/images/portfolio/cherry-car-showroom/01.png" alt="Completed Chery car showroom exterior" loading="lazy">
+                <div class="service-card-content"><p class="service-project-name">Chery Car Showroom</p><h4>Showroom Renovation</h4></div>
+              </article>
+              <article class="service-card">
+                <img src="assets/images/portfolio/honey-land-bangsar/01.jpg" alt="Completed Honey Land retail interior in Bangsar" loading="lazy">
+                <div class="service-card-content"><p class="service-project-name">Honey Land Bangsar</p><h4>Retail Renovation</h4></div>
+              </article>
+              <article class="service-card">
+                <img src="assets/images/portfolio/the-hub-coffee/01.jpg" alt="Completed cafe interior at The Hub Coffee" loading="lazy">
+                <div class="service-card-content"><p class="service-project-name">The Hub Coffee</p><h4>F&amp;B Renovation</h4></div>
+              </article>
             </div>
-          </article>
-
-          <article class="service-card service-card-smart">
-            <div class="service-card-content">
-              <p class="service-number">04</p>
-              <div class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img"><path d="m3 11 9-8 9 8"/><path d="M5 10v11h14V10M9 21v-6h6v6"/><path d="M8.5 10.5a5 5 0 0 1 7 0M10.5 12.5a2.2 2.2 0 0 1 3 0"/></svg>
-              </div>
-              <h3>Smart Living</h3>
-              <p>By integrate innovative technology into living space design to make life living easier and comfortable.</p>
-              <button class="service-next" type="button" aria-label="Return to Interior Design and Planning service" title="Back to first service"><span class="service-next-icon" aria-hidden="true"></span></button>
-            </div>
-          </article>
+          </section>
         </div>
       </div>
     </section>
@@ -170,57 +175,41 @@
 
         <div class="capabilities-track" tabindex="0" aria-label="Detailed renovation services. Scroll horizontally to view all services.">
           <article class="capability-card">
-            <img src="assets/images/detail-partitioning.jpg" alt="Interior partition construction work" loading="lazy">
-            <div class="capability-card-body"><span>01</span><p class="capability-eyebrow">Shape the space</p><div class="capability-copy"><h3>Partitioning</h3><p>Thoughtful divisions that improve privacy, flow and everyday function.</p><span class="capability-learn">Learn more</span></div></div>
+            <img src="assets/images/portfolio/taman-desa/01.jpg" alt="Taman Desa design and build project under construction" loading="lazy">
+            <div class="capability-card-body"><span>01</span><p class="capability-eyebrow">From idea to reality</p><div class="capability-copy"><h3>Design &amp; Build</h3><p>Complete planning, design and construction delivered by one experienced team.</p></div></div>
           </article>
           <article class="capability-card">
-            <img src="assets/images/detail-ceiling.jpg" alt="Ceiling installation in progress" loading="lazy">
-            <div class="capability-card-body"><span>02</span><p class="capability-eyebrow">Finish overhead</p><div class="capability-copy"><h3>Ceiling</h3><p>Clean ceiling systems planned around lighting, comfort and proportion.</p><span class="capability-learn">Learn more</span></div></div>
+            <img src="assets/images/portfolio/taman-desa/40.jpg" alt="Interior renovation work in progress at Taman Desa" loading="lazy">
+            <div class="capability-card-body"><span>02</span><p class="capability-eyebrow">Transform your space</p><div class="capability-copy"><h3>Renovation</h3><p>Residential and commercial renovation managed carefully from start to finish.</p></div></div>
           </article>
           <article class="capability-card">
-            <img src="assets/images/detail-wiring.png" alt="Electrician installing residential wiring during renovation" loading="lazy">
-            <div class="capability-card-body"><span>03</span><p class="capability-eyebrow">Power with care</p><div class="capability-copy"><h3>Wiring</h3><p>Safe, organised electrical work designed for modern daily living.</p><span class="capability-learn">Learn more</span></div></div>
+            <img src="assets/images/portfolio/taman-desa/20.jpg" alt="Demolition and structural preparation at Taman Desa" loading="lazy">
+            <div class="capability-card-body"><span>03</span><p class="capability-eyebrow">Prepare for change</p><div class="capability-copy"><h3>Demolition</h3><p>Controlled dismantling and site clearing to prepare for the next build stage.</p></div></div>
           </article>
           <article class="capability-card">
-            <img src="assets/images/detail-painting.jpg" alt="Interior wall painting work" loading="lazy">
-            <div class="capability-card-body"><span>04</span><p class="capability-eyebrow">Colour and finish</p><div class="capability-copy"><h3>Painting Work &amp; Art</h3><p>Refined surfaces and colour treatments that complete the atmosphere.</p><span class="capability-learn">Learn more</span></div></div>
+            <img src="assets/images/portfolio/taman-desa/30.jpg" alt="Electrical wiring installation at Taman Desa" loading="lazy">
+            <div class="capability-card-body"><span>04</span><p class="capability-eyebrow">Safe and reliable</p><div class="capability-copy"><h3>Electric Works</h3><p>Organised electrical systems, lighting and power points for modern spaces.</p></div></div>
           </article>
           <article class="capability-card">
-            <img src="assets/images/detail-wet-work.jpg" alt="Wet work and wall finishing" loading="lazy">
-            <div class="capability-card-body"><span>05</span><p class="capability-eyebrow">Built to last</p><div class="capability-copy"><h3>Wet Work</h3><p>Precise masonry, plastering and waterproofing for lasting performance.</p><span class="capability-learn">Learn more</span></div></div>
+            <img src="assets/images/portfolio/the-luxe/45.jpg" alt="Completed sink and plumbing installation at The Luxe" loading="lazy">
+            <div class="capability-card-body"><span>05</span><p class="capability-eyebrow">Flow with confidence</p><div class="capability-copy"><h3>Plumbing Works</h3><p>Practical water supply, drainage and fixture installation completed with care.</p></div></div>
           </article>
           <article class="capability-card">
-            <img src="assets/images/detail-aluminium.jpg" alt="Modern aluminium window system" loading="lazy">
-            <div class="capability-card-body"><span>06</span><p class="capability-eyebrow">Light and structure</p><div class="capability-copy"><h3>Aluminium</h3><p>Durable window and frame solutions with a clean architectural finish.</p><span class="capability-learn">Learn more</span></div></div>
+            <img src="assets/images/portfolio/armanee/01.jpg" alt="Completed timber flooring at Armanee" loading="lazy">
+            <div class="capability-card-body"><span>06</span><p class="capability-eyebrow">A strong foundation</p><div class="capability-copy"><h3>Flooring</h3><p>Durable tile, timber and modern flooring finishes installed with precision.</p></div></div>
           </article>
           <article class="capability-card">
-            <img src="assets/images/detail-tiles.jpg" alt="Worker installing interior floor tiles" loading="lazy">
-            <div class="capability-card-body"><span>07</span><p class="capability-eyebrow">Set with precision</p><div class="capability-copy"><h3>Tiles Work</h3><p>Careful alignment and durable installation across walls and floors.</p><span class="capability-learn">Learn more</span></div></div>
+            <img src="assets/images/portfolio/taman-desa/50.jpg" alt="Completed custom kitchen cabinets at Taman Desa" loading="lazy">
+            <div class="capability-card-body"><span>07</span><p class="capability-eyebrow">Made for your space</p><div class="capability-copy"><h3>Built-in Cabinet</h3><p>Custom storage and cabinetry crafted to suit your layout and daily needs.</p></div></div>
           </article>
           <article class="capability-card">
-            <img src="assets/images/detail-demolish.jpg" alt="Interior demolition work in progress" loading="lazy">
-            <div class="capability-card-body"><span>08</span><p class="capability-eyebrow">Clear the way</p><div class="capability-copy"><h3>Demolish Work</h3><p>Controlled removal that prepares each site for its next transformation.</p><span class="capability-learn">Learn more</span></div></div>
-          </article>
-          <article class="capability-card">
-            <img src="assets/images/detail-carpenter.jpg" alt="Carpenter working on a timber piece" loading="lazy">
-            <div class="capability-card-body"><span>09</span><p class="capability-eyebrow">Crafting better spaces</p><div class="capability-copy"><h3>Carpenter</h3><p>Precision workmanship that brings design to life, down to the finest detail.</p><span class="capability-learn">Learn more</span></div></div>
-          </article>
-          <article class="capability-card">
-            <img src="assets/images/detail-curtain.jpg" alt="Modern curtains and blinds in an interior" loading="lazy">
-            <div class="capability-card-body"><span>10</span><p class="capability-eyebrow">Quality installation</p><div class="capability-copy"><h3>Curtain &amp; Blinds</h3><p>Stylish, practical light-control solutions tailored to every space.</p><span class="capability-learn">Learn more</span></div></div>
-          </article>
-          <article class="capability-card">
-            <img src="assets/images/detail-flooring.jpg" alt="Finished hardwood flooring in a modern room" loading="lazy">
-            <div class="capability-card-body"><span>11</span><p class="capability-eyebrow">A strong foundation</p><div class="capability-copy"><h3>Flooring</h3><p>Well-finished surfaces selected for comfort, durability and character.</p><span class="capability-learn">Learn more</span></div></div>
-          </article>
-          <article class="capability-card">
-            <img src="assets/images/detail-wainscoting.jpg" alt="Decorative wall moulding and wainscoting" loading="lazy">
-            <div class="capability-card-body"><span>12</span><p class="capability-eyebrow">Depth and detail</p><div class="capability-copy"><h3>Wainscoting</h3><p>Architectural wall detailing that adds rhythm, texture and refinement.</p><span class="capability-learn">Learn more</span></div></div>
+            <img src="assets/images/portfolio/the-luxe/05.jpg" alt="Completed curtain and soft furnishing installation at The Luxe" loading="lazy">
+            <div class="capability-card-body"><span>08</span><p class="capability-eyebrow">The finishing touch</p><div class="capability-copy"><h3>Soft Furnishing</h3><p>Curtains, blinds and textile details selected to complete the atmosphere.</p></div></div>
           </article>
         </div>
 
         <div class="capabilities-controls">
-          <p class="capabilities-count" aria-live="polite"><span>01</span> / 12</p>
+          <p class="capabilities-count" aria-live="polite"><span>01</span> / 08</p>
           <div class="capabilities-progress" aria-hidden="true"><span></span></div>
           <div class="capabilities-control-group">
             <button class="capabilities-control capabilities-prev" type="button" aria-label="Previous service">
@@ -242,12 +231,6 @@
           <p class="portfolio-intro">Explore completed residential and commercial interiors, organised project by project.</p>
         </div>
 
-        <div class="portfolio-filters" role="group" aria-label="Filter portfolio projects">
-          <button class="portfolio-filter is-active" type="button" data-filter="all" aria-pressed="true">All projects</button>
-          <button class="portfolio-filter" type="button" data-filter="residential" aria-pressed="false">Residential</button>
-          <button class="portfolio-filter" type="button" data-filter="commercial" aria-pressed="false">Commercial</button>
-        </div>
-
         <div class="portfolio-grid" aria-live="polite"></div>
       </div>
     </section>
@@ -267,11 +250,12 @@
           </div>
         </header>
         <div class="portfolio-viewer-stage">
-          <button class="portfolio-viewer-nav portfolio-viewer-prev" type="button" aria-label="Previous photo">&#8592;</button>
-          <img class="portfolio-viewer-image" src="" alt="">
-          <button class="portfolio-viewer-nav portfolio-viewer-next" type="button" aria-label="Next photo">&#8594;</button>
+          <button class="portfolio-viewer-nav portfolio-viewer-prev" type="button" aria-label="Previous media">&#8592;</button>
+          <img class="portfolio-viewer-image" src="" alt="" decoding="async">
+          <video class="portfolio-viewer-video" controls playsinline preload="metadata" hidden></video>
+          <button class="portfolio-viewer-nav portfolio-viewer-next" type="button" aria-label="Next media">&#8594;</button>
         </div>
-        <div class="portfolio-thumbnails" aria-label="Project photos"></div>
+        <div class="portfolio-thumbnails" aria-label="Project photos and videos"></div>
         <div class="portfolio-viewer-footer" aria-hidden="true">
           <p class="portfolio-viewer-footer-count"></p>
           <div class="portfolio-viewer-progress"><span></span></div>
@@ -331,13 +315,24 @@
           <address class="contact-details">
             <div class="contact-detail">
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-              <p><strong>GD Glamorous Decoration</strong><br>R-3-15 Emporis, Persiaran Surian,<br>Kota Damansara, 47810 Petaling Jaya, Selangor</p>
+              <p><strong>Beauty Interiors Pro Renovation</strong><br>R-3-15 Emporis, Persiaran Surian,<br>Kota Damansara, 47810 Petaling Jaya, Selangor</p>
             </div>
             <div class="contact-detail">
               <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <p><strong>Call or WhatsApp</strong><br><a href="tel:+60126767617">+6012-6767 617</a></p>
+              <p><strong>Call or WhatsApp</strong><br><a href="tel:+60165599005">+6016-559 9005</a></p>
             </div>
           </address>
+          <div class="contact-socials" aria-label="Follow Beauty Decor">
+            <a class="contact-social" href="https://www.facebook.com/BeautyInteriorsPro" target="_blank" rel="noopener noreferrer" aria-label="Beauty Decor on Facebook">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+            </a>
+            <a class="contact-social" href="https://www.instagram.com/beautyinteriorspro" target="_blank" rel="noopener noreferrer" aria-label="Beauty Decor on Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a class="contact-social contact-social-xhs" href="https://xhslink.cn/m/7JXvkis6HNO" target="_blank" rel="noopener noreferrer" aria-label="装修王子 on Xiaohongshu">
+              <span lang="zh-CN">小红书</span>
+            </a>
+          </div>
         </div>
 
         <form class="contact-form" id="contact-form">
@@ -367,29 +362,29 @@
       </div>
     </section>
 
-    <section class="map-section" aria-label="GD Glamorous Decoration location">
+    <section class="map-section" aria-label="Beauty Interiors Pro Renovation location">
       <div class="map-inner">
         <div class="map-heading">
           <div>
             <p class="section-label">Find Our Studio</p>
-            <h2>Visit GD <span>Renovation.</span></h2>
+            <h2>Visit Beauty Interiors <span>Pro Renovation.</span></h2>
           </div>
           <p>Meet us at Emporis Kota Damansara to discuss your ideas, materials and renovation plans in person.</p>
         </div>
 
         <div class="map-frame">
           <iframe
-            title="Map showing GD Glamorous Decoration at Emporis Kota Damansara"
-            src="https://www.google.com/maps?q=GD%20Glamorous%20Decoration%20Emporis%20Kota%20Damansara&output=embed"
+            title="Map showing Beauty Interiors Pro Renovation at Emporis Kota Damansara"
+            src="https://www.google.com/maps?q=Beauty%20Interiors%20Pro%20Renovation%20Emporis%20Kota%20Damansara&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen>
           </iframe>
           <div class="map-card">
             <p class="map-card-label">Our Location</p>
-            <h3>GD Glamorous Decoration</h3>
+            <h3>Beauty Interiors Pro Renovation</h3>
             <p>R-3-15 Emporis, Persiaran Surian,<br>Kota Damansara, 47810 Petaling Jaya, Selangor</p>
-            <a href="https://www.google.com/maps/search/?api=1&query=GD%20Glamorous%20Decoration%20Emporis%20Kota%20Damansara" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.google.com/maps/search/?api=1&query=Beauty%20Interiors%20Pro%20Renovation%20Emporis%20Kota%20Damansara" target="_blank" rel="noopener noreferrer">
               <span>Get directions</span>
               <span aria-hidden="true">&#8594;</span>
             </a>
@@ -402,9 +397,8 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <a class="footer-logo" href="#" aria-label="GD Renovation home">
-          <span>GD</span>
-          <strong>Renovation</strong>
+        <a class="footer-logo" href="#" aria-label="Beauty Decor home">
+          <img src="assets/images/beauty-decor-full-logo.png" alt="Beauty Decor">
         </a>
         <p>We make a place beautiful. Thoughtful renovation, practical planning and workmanship built around the way you live.</p>
       </div>
@@ -423,24 +417,30 @@
       <div class="footer-column">
         <h2>Visit Us</h2>
         <p>R-3-15 Emporis, Persiaran Surian,<br>Kota Damansara, 47810 Petaling Jaya, Selangor</p>
-        <a class="footer-phone" href="tel:+60126767617">+6012-6767 617</a>
+        <a class="footer-phone" href="tel:+60165599005">+6016-559 9005</a>
       </div>
 
       <div class="footer-column footer-social-column">
         <h2>Follow</h2>
-        <a class="footer-social" href="https://www.facebook.com/glamorousdecoration17/" target="_blank" rel="noopener noreferrer" aria-label="GD Glamorous Decoration on Facebook">
+        <a class="footer-social" href="https://www.facebook.com/BeautyInteriorsPro" target="_blank" rel="noopener noreferrer" aria-label="Beauty Interiors Pro Renovation on Facebook">
           <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+        </a>
+        <a class="footer-social" href="https://www.instagram.com/beautyinteriorspro" target="_blank" rel="noopener noreferrer" aria-label="Beauty Interiors Pro Renovation on Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a class="footer-social footer-social-xhs" href="https://xhslink.cn/m/7JXvkis6HNO" target="_blank" rel="noopener noreferrer" aria-label="Find 装修王子 on Xiaohongshu" title="小红书：装修王子">
+          <span lang="zh-CN">小红书</span>
         </a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 GD Renovation. All rights reserved.</p>
+      <p>&copy; 2026 Beauty Interiors Pro Renovation. All rights reserved.</p>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/60126767617" target="_blank" rel="noopener noreferrer" aria-label="Contact GD Renovation on WhatsApp at +6012-6767 617">
+  <a class="whatsapp-float" href="https://wa.me/60165599005" target="_blank" rel="noopener noreferrer" aria-label="Contact Beauty Interiors Pro Renovation on WhatsApp at +6016-559 9005">
     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    <span class="whatsapp-number">+6012-6767 617</span>
+    <span class="whatsapp-number">+6016-559 9005</span>
   </a>
 
   <div class="whatsapp-confirm" hidden role="dialog" aria-modal="true" aria-labelledby="whatsapp-confirm-title">
@@ -451,7 +451,7 @@
       </div>
       <p class="whatsapp-confirm-label">Continue to WhatsApp</p>
       <h2 id="whatsapp-confirm-title">Start a conversation?</h2>
-      <p>You are about to open WhatsApp and contact GD Renovation at <strong>+6012-6767 617</strong>.</p>
+      <p>You are about to open WhatsApp and contact Beauty Interiors Pro Renovation at <strong>+6016-559 9005</strong>.</p>
       <div class="whatsapp-confirm-actions">
         <button class="whatsapp-confirm-cancel" type="button">Cancel</button>
         <button class="whatsapp-confirm-open" type="button">
@@ -462,8 +462,8 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=20260924-9"></script>
-  <script src="js/portfolio.js?v=20260924-2"></script>
+  <script src="js/main.js?v=20260924-11"></script>
+  <script src="js/portfolio.js?v=20260924-14"></script>
   <script src="js/animations.js?v=20260924-1"></script>
 </body>
 </html>

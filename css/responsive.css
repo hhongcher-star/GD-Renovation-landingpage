@@ -35,6 +35,30 @@
     border-bottom: 1px solid var(--charcoal);
   }
 
+  .nav-dropdown {
+    display: block;
+  }
+
+  .nav-dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-dropdown-menu {
+    position: static;
+    min-width: 0;
+    padding: 0 0 4px 16px;
+    transform: none;
+    border: 0;
+    border-bottom: 1px solid var(--charcoal);
+    box-shadow: none;
+  }
+
+  .nav-dropdown-menu a {
+    min-height: 42px;
+    padding: 11px 12px;
+  }
+
   .nav-link::after {
     right: auto;
     bottom: -1px;
@@ -101,15 +125,7 @@
   }
 
   .services-track {
-    margin-right: -20px;
-    padding-right: 20px;
-    display: flex;
-    gap: 14px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: inline mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .services-track::-webkit-scrollbar {
@@ -117,8 +133,15 @@
   }
 
   .service-card {
-    flex: 0 0 min(360px, 78vw);
-    scroll-snap-align: start;
+    min-height: 300px;
+  }
+
+  .service-group-heading {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .service-group-heading > p:last-child {
+    grid-column: 2;
   }
 
   .capabilities-inner {
@@ -176,20 +199,36 @@
   }
 
   .logo-mark {
-    font-size: 1.82rem;
+    width: auto;
+    height: 44px;
+    flex-basis: auto;
   }
 
-  .logo-name {
-    font-size: 1.02rem;
+  .nav-logo {
+    width: fit-content;
+    height: 58px;
+    gap: 0;
   }
 
-  .logo-tagline {
-    font-size: 0.35rem;
+  .portfolio-card-cue {
+    top: 10px;
+    right: 10px;
+    min-height: 29px;
+    padding: 0 9px;
+    font-size: 0.56rem;
   }
 
   .hero {
     min-height: 100svh;
     max-height: none;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  .hero-video {
+    display: block;
   }
 
   .hero-media {
@@ -325,24 +364,42 @@
   }
 
   .services-track {
-    margin-right: 0;
-    padding-right: 0;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 10px;
-    overflow: visible;
-    scroll-snap-type: none;
+  }
+
+  .service-groups {
+    gap: 34px;
+  }
+
+  .service-group-heading {
+    margin-bottom: 14px;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 8px 12px;
+  }
+
+  .service-group-heading h3 {
+    font-size: 1.05rem;
+  }
+
+  .service-group-heading > p:last-child {
+    grid-column: 2;
+    font-size: 0.76rem;
   }
 
   .service-card {
-    min-height: 0;
-    aspect-ratio: 1;
-    scroll-snap-align: none;
+    min-height: 250px;
+    aspect-ratio: 4 / 3;
   }
 
   .service-card-content {
     height: 100%;
-    padding: 15px 13px;
+    padding: 18px;
+  }
+
+  .service-card h4 {
+    font-size: 0.96rem;
   }
 
   .service-number {
@@ -366,7 +423,7 @@
     line-height: 1.12;
   }
 
-  .service-card-content > p:not(.service-number) {
+  .service-card-content > p:not(.service-number):not(.service-project-name) {
     display: none;
   }
 
@@ -445,11 +502,6 @@
     margin-top: 12px;
     font-size: 0.74rem;
     line-height: 1.45;
-  }
-
-  .capability-copy .capability-learn {
-    margin-top: 12px;
-    font-size: 0.58rem;
   }
 
   .impact-section {
@@ -536,7 +588,8 @@
     height: auto;
   }
 
-  .portfolio-viewer-image {
+  .portfolio-viewer-image,
+  .portfolio-viewer-video {
     width: calc(100% - 28px);
   }
 
@@ -644,6 +697,10 @@
     margin-top: 28px;
   }
 
+  .contact-socials {
+    margin: 22px 0 0;
+  }
+
   .contact-form {
     padding: 20px 16px;
     gap: 16px;
@@ -703,7 +760,18 @@
   }
 
   .footer-brand p {
-    margin-top: 16px;
+    margin-top: 0;
+  }
+
+  .footer-brand {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .footer-logo img {
+    width: 104px;
+    height: 104px;
+    flex-basis: 104px;
   }
 
   .footer-column h2 {

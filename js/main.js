@@ -20,6 +20,9 @@ if (siteHeader) {
 }
 
 if (navToggle && primaryNav) {
+  const servicesToggle = document.querySelector(".nav-dropdown-toggle");
+  const servicesMenu = document.querySelector(".nav-dropdown-menu");
+
   const closeNavigation = () => {
     navToggle.classList.remove("is-open");
     primaryNav.classList.remove("is-open");
@@ -36,10 +39,29 @@ if (navToggle && primaryNav) {
     navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
   });
 
+  servicesToggle?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const isOpen = servicesToggle.getAttribute("aria-expanded") === "true";
+    servicesToggle.setAttribute("aria-expanded", String(!isOpen));
+    if (servicesMenu) servicesMenu.hidden = isOpen;
+  });
+
   primaryNav.addEventListener("click", (event) => {
-    if (event.target.closest(".nav-link")) {
+    if (event.target.closest(".nav-link:not(.nav-dropdown-toggle)")) {
       closeNavigation();
     }
+  });
+
+  document.querySelectorAll("[data-portfolio-category]").forEach((link) => {
+    link.addEventListener("click", () => {
+      servicesToggle?.setAttribute("aria-expanded", "false");
+      if (servicesMenu) servicesMenu.hidden = true;
+      closeNavigation();
+      window.setTimeout(() => {
+        document.querySelector(`.portfolio-group-heading[data-type="${link.dataset.portfolioCategory}"]`)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 0);
+    });
   });
 
   window.addEventListener("resize", () => {
@@ -103,13 +125,13 @@ contactForm?.addEventListener("submit", (event) => {
   const email = String(formData.get("email") || "").trim();
   const message = String(formData.get("message") || "").trim();
   const enquiry = [
-    "Hello GD Renovation, I would like to make an enquiry.",
+    "Hello Beauty Interiors Pro Renovation, I would like to make an enquiry.",
     `Name: ${name}`,
     `Mobile: ${mobile}`,
     email ? `Email: ${email}` : null,
     `Message: ${message}`,
   ].filter(Boolean).join("\n");
 
-  window.open(`https://wa.me/60126767617?text=${encodeURIComponent(enquiry)}`, "_blank", "noopener,noreferrer");
+  window.open(`https://wa.me/60165599005?text=${encodeURIComponent(enquiry)}`, "_blank", "noopener,noreferrer");
 });
 
