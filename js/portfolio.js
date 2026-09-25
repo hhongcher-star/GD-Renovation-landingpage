@@ -133,11 +133,7 @@ const portfolioProjects = [
   { slug: "the-hub-coffee", name: "The Hub Coffee", type: "commercial", count: 15 },
   { slug: "pezzo-pizza-ipc", name: "Pezzo Pizza IPC", type: "commercial", count: 9 },
   { slug: "3d-rendering", name: "3D Rendering", type: "rendering", count: 24 },
-  { slug: "social-media-video", name: "Social Media Video 01", type: "social", count: 0, videoCount: 1, videoExtension: "mp4", videoFile: "01.mp4" },
-  { slug: "social-media-video", name: "Social Media Video 02", type: "social", count: 0, videoCount: 1, videoExtension: "mp4", videoFile: "02.mp4", coverImage: "assets/images/portfolio/social-media-video/cover-02.png" },
-  { slug: "social-media-video", name: "Social Media Video 03", type: "social", count: 0, videoCount: 1, videoExtension: "mp4", videoFile: "03.mp4" },
-  { slug: "social-media-video", name: "Social Media Video 04", type: "social", count: 0, videoCount: 1, videoExtension: "mp4", videoFile: "04.mp4" },
-  { slug: "social-media-video", name: "Social Media Video 05", type: "social", count: 0, videoCount: 1, videoExtension: "mp4", videoFile: "05.mp4" },
+  { slug: "social-media-video", name: "Social Media Video", type: "social", count: 0, videoCount: 1, videoExtension: "mp4", videoFile: "01.mp4", coverImage: "assets/images/portfolio/social-media-video/cover-01.webp" },
 ];
 
 const portfolioGrid = document.querySelector(".portfolio-grid");
@@ -172,23 +168,23 @@ if (portfolioGrid && portfolioViewer) {
 
   const getProjectImages = (project) => Array.from({ length: project.count }, (_, index) => {
     const number = index + 1;
-    const extension = project.extensions?.[number] || project.defaultExtension || "jpg";
-    return `assets/images/portfolio/${project.slug}/${String(number).padStart(2, "0")}.${extension}`;
+    return `assets/images/portfolio/${project.slug}/${String(number).padStart(2, "0")}.webp`;
   });
 
   const getProjectMedia = (project) => {
     const images = getProjectImages(project).map((src) => ({ type: "image", src }));
     const videos = project.videoFile
-      ? [{ type: "video", src: `${portfolioVideoRoot}/${project.slug}/${project.videoFile}` }]
+      ? [{ type: "video", src: `${portfolioVideoRoot}/${project.slug}/${project.videoFile}`, poster: project.coverImage }]
       : Array.from({ length: project.videoCount || 0 }, (_, index) => ({
         type: "video",
         src: `${portfolioVideoRoot}/${project.slug}/${String(index + 1).padStart(2, "0")}.${project.videoExtension || "mp4"}`,
+        poster: project.coverImage,
       }));
     return [...images, ...videos];
   };
 
   const getProjectMeta = (project) => {
-    if (!project.count) return `${project.videoCount} videos`;
+    if (!project.count) return `${project.videoCount} ${project.videoCount === 1 ? "video" : "videos"}`;
     const photoLabel = `${project.count} ${project.count === 1 ? "photo" : "photos"}`;
     if (!project.videoCount) return photoLabel;
     return `${photoLabel} · ${project.videoCount} ${project.videoCount === 1 ? "video" : "videos"}`;
@@ -207,7 +203,7 @@ if (portfolioGrid && portfolioViewer) {
       previousProjectType = project.type;
     }
 
-    const cover = project.coverImage || getProjectImages(project)[0];
+    const cover = project.coverImage || `assets/images/portfolio/${project.slug}/cover.webp`;
     const coverMarkup = cover
       ? `<img src="${cover}" alt="${project.name} completed renovation" loading="lazy" decoding="async">`
       : `<video src="${portfolioVideoRoot}/${project.slug}/${project.videoFile || `01.${project.videoExtension || "mp4"}`}" muted playsinline preload="metadata" aria-label="${project.name} preview"></video>`;
@@ -243,11 +239,17 @@ if (portfolioGrid && portfolioViewer) {
       viewerImage.hidden = true;
       viewerVideo.hidden = false;
       viewerVideo.src = nextSource;
+      if (activeMedia.poster) {
+        viewerVideo.poster = activeMedia.poster;
+      } else {
+        viewerVideo.removeAttribute("poster");
+      }
       viewerVideo.setAttribute("aria-label", `${activeProject.name} video ${activePhoto - activeProject.count + 1}`);
       viewerVideo.load();
     } else if (viewerImage.src && !reducePortfolioMotion.matches && previousPhoto !== activePhoto) {
       viewerVideo.hidden = true;
       viewerVideo.removeAttribute("src");
+      viewerVideo.removeAttribute("poster");
       viewerVideo.load();
       viewerImage.hidden = false;
       const movingForward = index > previousPhoto || (previousPhoto === media.length - 1 && activePhoto === 0);
@@ -267,6 +269,7 @@ if (portfolioGrid && portfolioViewer) {
     } else {
       viewerVideo.hidden = true;
       viewerVideo.removeAttribute("src");
+      viewerVideo.removeAttribute("poster");
       viewerVideo.load();
       viewerImage.hidden = false;
       viewerImage.src = nextSource;
@@ -274,7 +277,7 @@ if (portfolioGrid && portfolioViewer) {
     viewerImage.alt = activeMedia.type === "image" ? `${activeProject.name} renovation, photo ${activePhoto + 1} of ${activeProject.count}` : "";
     viewerCount.textContent = `${String(activePhoto + 1).padStart(2, "0")} / ${String(media.length).padStart(2, "0")}`;
     viewerFooterCount.textContent = viewerCount.textContent;
-    const backdrop = activeMedia.type === "image" ? activeMedia.src : getProjectImages(activeProject)[0];
+    const backdrop = activeMedia.type === "image" ? activeMedia.src : activeMedia.poster || getProjectImages(activeProject)[0];
     portfolioViewer.style.setProperty("--portfolio-backdrop", `url("${backdrop}")`);
     portfolioViewer.style.setProperty("--portfolio-progress", `${((activePhoto + 1) / media.length) * 100}%`);
 
@@ -313,7 +316,12 @@ if (portfolioGrid && portfolioViewer) {
       });
     }, { root: thumbnails, rootMargin: "0px 320px", threshold: 0.01 });
 
-    getProjectMedia(project).forEach((media, index) => {
+    const mediaItems = getProjectMedia(project);
+    const hasMultipleMedia = mediaItems.length > 1;
+    previousButton.hidden = !hasMultipleMedia;
+    nextButton.hidden = !hasMultipleMedia;
+
+    mediaItems.forEach((media, index) => {
       const button = document.createElement("button");
       button.className = "portfolio-thumbnail";
       button.type = "button";
@@ -321,6 +329,8 @@ if (portfolioGrid && portfolioViewer) {
       button.setAttribute("aria-label", `Show ${media.type} ${mediaNumber}`);
       button.innerHTML = media.type === "image"
         ? `<img data-src="${media.src}" alt="" loading="lazy" decoding="async">`
+        : media.poster
+          ? `<span class="portfolio-thumbnail-video"><img data-src="${media.poster}" alt="" loading="lazy" decoding="async"><i class="fa-solid fa-play" aria-hidden="true"></i><span>Video ${mediaNumber}</span></span>`
         : `<span class="portfolio-thumbnail-video"><i class="fa-solid fa-play" aria-hidden="true"></i><span>Video ${mediaNumber}</span></span>`;
       button.addEventListener("click", () => showPhoto(index));
       thumbnails.append(button);
@@ -333,6 +343,22 @@ if (portfolioGrid && portfolioViewer) {
     portfolioViewer.querySelector(".portfolio-viewer-close").focus();
   };
 
+  const keepFocusInViewer = (event) => {
+    if (event.key !== "Tab") return;
+    const focusable = [...portfolioViewer.querySelectorAll("button:not([hidden]), video[controls]")]
+      .filter((element) => !element.disabled && element.offsetParent !== null);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  };
+
   const closeViewer = () => {
     photoRequest += 1;
     portfolioViewer.hidden = true;
@@ -340,6 +366,7 @@ if (portfolioGrid && portfolioViewer) {
     viewerImage.src = "";
     viewerVideo.pause();
     viewerVideo.removeAttribute("src");
+    viewerVideo.removeAttribute("poster");
     viewerVideo.load();
     thumbnailObserver?.disconnect();
     thumbnailObserver = null;
@@ -401,7 +428,10 @@ if (portfolioGrid && portfolioViewer) {
 
   document.addEventListener("keydown", (event) => {
     if (portfolioViewer.hidden) return;
+    keepFocusInViewer(event);
+    const media = activeProject ? getProjectMedia(activeProject) : [];
     if (event.key === "Escape") closeViewer();
+    if (media.length <= 1) return;
     if (event.key === "ArrowLeft") showPhoto(activePhoto - 1);
     if (event.key === "ArrowRight") showPhoto(activePhoto + 1);
   });
