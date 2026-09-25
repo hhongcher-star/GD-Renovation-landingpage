@@ -284,10 +284,6 @@ a {
   object-position: center;
 }
 
-.hero-video {
-  display: none;
-}
-
 .hero-overlay {
   background: rgba(7, 7, 7, 0.48);
 }

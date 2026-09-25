@@ -223,14 +223,6 @@
     max-height: none;
   }
 
-  .hero-image {
-    display: none;
-  }
-
-  .hero-video {
-    display: block;
-  }
-
   .hero-media {
     object-position: 61% center;
   }
