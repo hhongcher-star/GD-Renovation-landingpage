@@ -1777,10 +1777,265 @@ body.portfolio-viewer-open {
 }
 
 .contact-section {
-  order: 4;
+  order: 5;
   padding: 68px 0 74px;
   color: var(--black);
   background: var(--white);
+}
+
+.consultation-section {
+  order: 3;
+  padding: 58px 0 52px;
+  color: var(--black);
+  background: var(--white);
+  border-top: 1px solid var(--grey-100);
+}
+
+.consultation-inner {
+  width: min(calc(100% - 64px), var(--container));
+  margin: 0 auto;
+}
+
+.consultation-heading {
+  margin-bottom: 28px;
+  display: block;
+}
+
+.consultation-heading .section-label {
+  margin-bottom: 16px;
+  color: var(--charcoal);
+}
+
+.consultation-heading h2 {
+  max-width: none;
+  margin: 0;
+  font-family: "Archivo", sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3.7rem);
+  line-height: 0.98;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.consultation-heading h2 span {
+  color: var(--yellow);
+}
+
+.consultation-intro {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: var(--grey-700);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.consultation-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.consultation-card {
+  min-height: 318px;
+  padding: 0 24px 24px;
+  display: flex;
+  flex-direction: column;
+  background: var(--off-white);
+  border: 1px solid #dededb;
+  border-top: 4px solid var(--yellow);
+  transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+
+.consultation-card-image {
+  position: relative;
+  height: 150px;
+  margin: 0 -24px;
+  overflow: hidden;
+  background: var(--grey-100);
+}
+
+.consultation-card-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13, 13, 13, 0.18), transparent 55%);
+  pointer-events: none;
+}
+
+.consultation-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.consultation-card:hover .consultation-card-image img {
+  transform: scale(1.035);
+}
+
+.consultation-card:hover {
+  transform: translateY(-5px);
+  border-color: #c8b18e;
+  background: #fbfaf7;
+}
+
+.consultation-card-featured {
+  background: #f2f1ed;
+}
+
+.consultation-card-topline {
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  border-bottom: 1px solid #d9d8d3;
+}
+
+.consultation-option {
+  color: var(--grey-700);
+  font-family: "Archivo", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.consultation-price {
+  margin: -6px 0 0;
+  color: var(--yellow);
+  font-family: "Archivo", sans-serif;
+  font-size: clamp(2.3rem, 3.3vw, 3.4rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.consultation-price span {
+  margin-right: 5px;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  vertical-align: super;
+}
+
+.consultation-card-content {
+  flex: 1;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.consultation-card h3 {
+  margin: 0;
+  font-family: "Archivo", sans-serif;
+  font-size: clamp(1.2rem, 1.8vw, 1.65rem);
+  line-height: 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.consultation-meta {
+  margin: 9px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--yellow);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.consultation-meta i {
+  width: 14px;
+  text-align: center;
+}
+
+.consultation-description {
+  max-width: 530px;
+  margin: 18px 0 22px;
+  color: var(--grey-700);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.consultation-button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: auto;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--black);
+  background: var(--yellow);
+  border: 1px solid var(--yellow);
+  font-family: "Archivo", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.consultation-button:hover,
+.consultation-button:focus-visible {
+  background: var(--yellow-hover);
+  border-color: var(--yellow-hover);
+}
+
+.consultation-button span:last-child {
+  font-size: 1.1rem;
+  transition: transform 180ms ease;
+}
+
+.consultation-button:hover span:last-child,
+.consultation-button:focus-visible span:last-child {
+  transform: translateX(4px);
+}
+
+.consultation-help {
+  margin-top: 14px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background: var(--off-white);
+  border-left: 4px solid var(--yellow);
+}
+
+.consultation-help p {
+  margin: 0;
+  color: var(--grey-700);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.consultation-help strong {
+  color: var(--black);
+}
+
+.consultation-help a {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--yellow);
+  font-family: "Archivo", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.consultation-help a:hover,
+.consultation-help a:focus-visible {
+  color: var(--yellow-hover);
+}
+
+.consultation-help i {
+  font-size: 1.1rem;
 }
 
 .contact-inner {
@@ -1972,7 +2227,7 @@ body.portfolio-viewer-open {
 }
 
 .map-section {
-  order: 3;
+  order: 4;
   padding: 42px 0 48px;
   background: var(--off-white);
   border-top: 1px solid var(--grey-100);

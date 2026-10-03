@@ -182,6 +182,15 @@
     gap: 42px;
   }
 
+  .consultation-inner {
+    width: min(calc(100% - 40px), var(--container));
+  }
+
+  .consultation-heading {
+    display: block;
+  }
+
+
   .map-inner {
     width: min(calc(100% - 40px), var(--container));
   }
@@ -668,6 +677,73 @@
 
   .contact-section {
     padding: 50px 0 56px;
+  }
+
+  .consultation-section {
+    padding: 44px 0 40px;
+  }
+
+  .consultation-inner {
+    width: calc(100% - 28px);
+  }
+
+  .consultation-heading {
+    margin-bottom: 24px;
+  }
+
+  .consultation-heading h2 {
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
+  }
+
+  .consultation-intro {
+    margin-top: 12px;
+    font-size: 0.84rem;
+  }
+
+  .consultation-heading h2 {
+    white-space: normal;
+  }
+
+  .consultation-options {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .consultation-card {
+    min-height: 0;
+    padding: 0 16px 16px;
+  }
+
+  .consultation-card-image {
+    height: 145px;
+    margin: 0 -16px;
+  }
+
+  .consultation-card-topline {
+    padding: 16px 0;
+  }
+
+  .consultation-price {
+    font-size: 2.7rem;
+  }
+
+  .consultation-card-content {
+    padding-top: 22px;
+  }
+
+  .consultation-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .consultation-description {
+    margin: 16px 0 20px;
+  }
+
+  .consultation-help {
+    padding: 16px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
   }
 
   .contact-inner {
